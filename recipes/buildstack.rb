@@ -7,7 +7,7 @@ if node['dokku']['buildstack']['use_prebuilt']
 else
   docker_image node['dokku']['buildstack']['image_name'] do
     source node['dokku']['buildstack']['stack_url']
-    action :build
+    action node['dokku']['buildstack']['stack_action']
   end
 end
 
